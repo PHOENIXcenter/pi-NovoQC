@@ -53,54 +53,9 @@ Go to xnovo_dia_finetune/:
     python main_xNovo.py --config config_xNovo.yaml
 Expected outputs: checkpoints/, test_results/, log/, config_file/
 
-
-## 2) Repository map (what each folder/file is for)
-
-cct_qc_graphnovo/ — CCT QC demo (GraphNovo)
-	•	xNovo_DDA_based_CCT_validation.ipynb
-End-to-end runnable demo: candidate generation → feature pairing → strict/relaxed/combined scoring → FDR estimation & γ-adjustment → PSM-level and peptide-level QC plots.
-	•	FDR.py
-Core CCT logic: scoring, FDR/FDP computation, and interval-wise γ adjustment.
-	•	model.py
-π-xNovo-DDA model wrapper and feature extraction required by CCT.
-	•	evaluate.py
-Evaluation helpers (AA match / peptide recall, etc.).
-	•	BLAST.py (optional)
-Helper utilities for peptide-to-protein mapping via BLAST+ (only needed for optional downstream steps).
-	•	config_xNovo_DDA.yaml
-Configuration template (paths + key hyperparameters).
-	•	requirements.txt, CITATION.cff, LICENSE, THIRD_PARTY_NOTICES.md
-Dependencies, citation metadata, licensing, and third-party notices.
-	•	depthcharge_new/, pyteomics_master/
-Vendored dependencies for reproducibility (keep original licenses; see notices).
-
-xnovo_dda_finetune/ — π-xNovo (DDA) fine-tuning
-	•	main_xNovo.py
-Minimal entry point for fine-tuning / training.
-	•	configs/xnovo_dda_finetune.yaml
-Example training configuration.
-	•	xnovo_dda/
-Python package with the model (model.py), data loader (dataset.py), evaluation (evaluate.py), and utilities (utils.py).
-	•	data/README.md
-Required data layout and MGF chunk format.
-	•	weights/README.md
-Where to place pretrained weights (downloaded separately).
-	•	requirements.txt, CITATION.cff, LICENSE
-
-xnovo_dia_finetune/ — π-xNovo (DIA) fine-tuning + DIA data prep
-	•	main_xNovo.py, dataset.py, model.py, utils.py, evaluate.py
-Core training pipeline.
-	•	s1_psm_match.py, s2_train_data_generation.py, s3_train_data_offset.py
-Optional helper scripts to convert run-level DIA identifications to spectrum-level pairs for training.
-	•	config_xNovo.yaml / configs/xnovo_dia_finetune.yaml
-Training configuration (edit paths).
-	•	depthcharge_new/, pyteomics_master/
-Vendored dependencies (see THIRD_PARTY_NOTICES.md).
-	•	requirements.txt, CITATION.cff, LICENSE, THIRD_PARTY_NOTICES.md
-
 ⸻
 
-## 3) Data and pretrained weights
+## 2) Data and pretrained weights
 
 Datasets
 
@@ -118,20 +73,20 @@ After download, place weights under:
 
 ⸻
 
-## 4) Citation
+## 3) Citation
 
 Please cite the manuscript and/or use CITATION.cff in each subfolder.
 
 ⸻
 
-## 5) License and third-party code
+## 4) License and third-party code
 
 See LICENSE in each subfolder.
 This repository vendors some third-party code for reproducibility; original licenses are preserved (see THIRD_PARTY_NOTICES.md where applicable).
 
 ⸻
 
-6) Notes for reproducibility
+## 5) Notes for reproducibility
 	•	GPU is recommended for training; CPU is sufficient for small-scale sanity checks.
 	•	Output directories (checkpoints/, log/, test_results/, config_file/) are typically git-ignored.
 	•	For new datasets (especially DIA), you may need to adapt column names/formats in data-prep scripts.
