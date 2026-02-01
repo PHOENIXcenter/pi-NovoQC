@@ -1,0 +1,36 @@
+name: tests
+
+on:
+  push:
+    paths:
+      - '**.py'
+      - '.github/workflows/pythonpackage.yml'
+  pull_request:
+    paths:
+      - '**.py'
+      - '.github/workflows/pythonpackage.yml'
+
+jobs:
+  build:
+
+    runs-on: 'ubuntu-20.04'
+    strategy:
+      matrix:
+        python-version: ['2.7', '3.6', '3.7', '3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install libhdf5-serial-dev
+        python -m pip install --upgrade pip
+        pip install numpy
+        pip install -r test-requirements.txt
+    - name: Run the tests
+      run: |
+        cd tests; find . -name 'test_*.py' -print0 | xargs -0 -n1 env PYTHONPATH=.. python

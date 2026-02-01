@@ -1,0 +1,23 @@
+# Core numerical + ML
+numpy
+pandas
+scipy
+scikit-learn
+xgboost
+
+# Deep learning
+torch
+
+# MS / proteomics utilities
+pyteomics
+spectrum_utils
+
+# General utilities
+pyyaml
+tqdm
+biopython
+
+# Plotting + notebooks
+matplotlib
+jupyter
+ipykernel

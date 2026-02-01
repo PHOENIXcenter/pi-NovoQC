@@ -1,0 +1,33 @@
+Useful Links
+------------
+
+Pyteomics is hosted at the following sites:
+
+    - Python package @ Python Package Index: https://pypi.org/project/pyteomics/
+    - project documentation @ Read the Docs: https://pyteomics.readthedocs.io/
+    - source code @ Github: https://github.com/levitsky/pyteomics
+    - mailing list @ Google: https://groups.google.com/group/pyteomics/
+
+Backup of old repo
+------------------
+
+Pyteomics source code used to be hosted on Bitbucket. An archive of issues and pull requests is stored at:
+https://levitsky.github.io/bitbucket_backup/#!/levitsky/pyteomics.
+
+Pyteomics Extensions
+--------------------
+
+Additional, third-party packages extending the Pyteomics functionality can be insalled separately:
+
+    - `pyteomics.pepxmltk <https://pypi.org/project/pyteomics-pepxmltk>`_ (pepXML file creation)
+    - `pyteomics.biolccc <https://pypi.org/project/pyteomics-biolccc>`_ (retention time prediction)
+    - `pyteomics.cythonize <https://pypi.org/project/pyteomics-cythonize>`_ (cythonized versions of :py:mod:`mass` and :py:mod:`!parser` modules)
+
+Feedback & Support
+------------------
+
+Your questions and suggestions are welcome at:
+
+  - pyteomics@googlegroups.com mailing list;
+  - *(new!)* `Pyteomics Discussions page <https://github.com/levitsky/pyteomics/discussions>`_ on Github;
+  - Github `issue tracker <https://github.com/levitsky/pyteomics/issues>`_ (for bugs, feature requests, etc.)

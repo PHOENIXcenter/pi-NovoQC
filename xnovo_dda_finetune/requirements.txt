@@ -1,0 +1,21 @@
+# Core
+numpy
+pandas
+pyyaml
+tqdm
+
+# ML
+# Install the PyTorch build that matches your CUDA version:
+#   https://pytorch.org/get-started/locally/
+torch
+
+# MS / proteomics utilities
+pyteomics
+spectrum-utils
+
+# Logging
+tensorboard
+tensorboardX
+
+# NOTE: This code also imports `depthcharge_new` (a local fork).
+# Add it to your environment by vendoring the package or installing it separately.

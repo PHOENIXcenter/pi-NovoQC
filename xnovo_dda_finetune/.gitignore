@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs / outputs
+log/
+checkpoints/
+config_file/
+test_results/
+
+# Data (keep empty folders with .gitkeep)
+data/**
+!data/.gitkeep
+
+# Weights (use Git LFS for .pth)
+weights/**
+!weights/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
