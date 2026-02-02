@@ -11,7 +11,8 @@ The code is organized into **three self-contained subprojects**:
 - `xnovo_dia_finetune/` — **π-xNovo (DIA) fine-tuning** code + optional helper scripts to build **spectrum-level training pairs** from run-level DIA identifications.
 
 > **Data and pretrained weights are not stored in this repo.**  
-> Datasets should be downloaded from the original public releases. Pretrained weights are intended to be hosted on Zenodo (see below).
+> Datasets should be downloaded from the original public releases. Pretrained weights are intended to be hosted on Google drive (see below).
+https://drive.google.com/drive/folders/1pfrtLEEoWrGrIfriNGkIJqAIRgrH2tDW?usp=drive_link
 
 ---
 
