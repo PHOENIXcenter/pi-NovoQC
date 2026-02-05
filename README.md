@@ -62,11 +62,10 @@ Datasets
 
 This repository does not redistribute public datasets. Please download datasets (e.g., GraphNovo, MassIVE-KB, Astral) from their original releases and place them locally.
 
-Pretrained weights (Zenodo)
+Pretrained weights (Google drive)
 
-Pretrained weights are intended to be hosted on Zenodo.
+Pretrained weights are intended to be hosted on Google drive.
 
-Planned artifact: doi:<ZENODO_DOI>
 After download, place weights under:
 	•	xnovo_dda_finetune/weights/
 	•	xnovo_dia_finetune/ (follow folder README; can be weights/ or config-defined path)
