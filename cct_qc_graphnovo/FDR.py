@@ -885,8 +885,11 @@ import torch.backends.cudnn as cudnn
 import random
 
 random.seed(454)
+np.random.seed(454)
 torch.manual_seed(454)
+torch.cuda.manual_seed_all(454)
 cudnn.deterministic = True
+cudnn.benchmark = False
 
 # ────────────────────────────────────────────────────
 # 1. feature dataset
