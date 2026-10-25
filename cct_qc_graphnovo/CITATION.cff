@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the accompanying manuscript using the preferred citation below."
+message: "Please cite the bioRxiv preprint using the preferred citation below."
 type: software
 title: "pi-NovoQC"
 authors:
@@ -8,8 +8,14 @@ version: 0.2.1
 repository-code: "https://github.com/PHOENIXcenter/pi-NovoQC"
 url: "https://github.com/PHOENIXcenter/pi-NovoQC"
 preferred-citation:
-  type: generic
-  title: "False discovery rate control enables trustworthy deep-learning-based de novo peptide sequencing"
+  type: article
+  title: "False discovery rate control for trustworthy AI-based de novo peptide sequencing"
+  journal: "bioRxiv"
+  year: 2026
+  month: 6
+  day: 29
+  doi: "10.64898/2026.06.29.735174"
+  url: "https://doi.org/10.64898/2026.06.29.735174"
   authors:
     - family-names: "Liang"
       given-names: "Zhendong"

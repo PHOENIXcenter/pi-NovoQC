@@ -1,6 +1,6 @@
 # π-NovoQC: FDR control for de novo peptide sequencing
 
-Code accompanying **False discovery rate control enables trustworthy deep-learning-based de novo peptide sequencing**, by Zhendong Liang, Chengxin Dai, Tianze Ling, Tingpeng Yang, Yun Yang, Yeye Leng, Linhai Xie, Yonghong He, Fuchu He, Yu Wang and Cheng Chang.
+Code accompanying **[False discovery rate control for trustworthy AI-based de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)**, by Zhendong Liang, Chengxin Dai, Tianze Ling, Tingpeng Yang, Yun Yang, Yeye Leng, Linhai Xie, Yonghong He, Fuchu He, Yu Wang and Cheng Chang (bioRxiv, 2026).
 
 π-NovoQC implements Counterpart Calibration Theory (CCT) for false discovery rate (FDR) estimation and control at the peptide-spectrum match (PSM) and peptide levels. This repository also provides π-xNovo-DDA and π-xNovo-DIA sequencing-model training code, and a DDA analysis workflow that continues from sequencing and CCT filtering to protein inference and quantification.
 
@@ -71,9 +71,9 @@ The notebook is a reusable analysis example. Reproducing a particular result in 
 
 See [RESOURCES.md](RESOURCES.md) for the data repositories, the Google Drive resources, expected checkpoint locations and input formats. The GraphNovo test data and the accompanying CCT resources are provided through the named Google Drive archive; the larger datasets used in the paper remain available from their original repositories.
 
-Please cite the accompanying manuscript when using this work:
+Please cite the bioRxiv preprint when using this work:
 
-> Liang Z, Dai C, Ling T, Yang T, Yang Y, Leng Y, Xie L, He Y, He F, Wang Y, Chang C. **False discovery rate control enables trustworthy deep-learning-based de novo peptide sequencing.** Manuscript.
+> Liang Z, Dai C, Ling T, Yang T, Yang Y, Leng Y, Xie L, He Y, He F, Wang Y, Chang C. **False discovery rate control for trustworthy AI-based de novo peptide sequencing.** bioRxiv (2026). DOI: [10.64898/2026.06.29.735174](https://doi.org/10.64898/2026.06.29.735174).
 
 Machine-readable citation information is provided in [CITATION.cff](CITATION.cff).
 

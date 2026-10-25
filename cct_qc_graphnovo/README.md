@@ -1,7 +1,7 @@
 # Standalone PSM and peptide CCT quality control
 
-This example accompanies **False discovery rate control enables trustworthy
-deep-learning-based de novo peptide sequencing** (Liang et al.). It implements
+This example accompanies **[False discovery rate control for trustworthy AI-based
+de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)** (Liang et al., bioRxiv, 2026). It implements
 the paired features and sequential PSM/peptide QC described in Figs. 1 and 3,
 Supplementary Table 2 and Supplementary Note 2. See `CITATION.cff` for citation
 information. The analysis ends at peptides; protein inference is not required.

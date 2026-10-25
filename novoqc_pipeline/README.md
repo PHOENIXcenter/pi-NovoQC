@@ -1,7 +1,7 @@
 # π-NovoQC: from DDA spectra to protein quantification
 
-This workflow accompanies **False discovery rate control enables trustworthy
-deep-learning-based de novo peptide sequencing** (Liang et al.). It implements
+This workflow accompanies **[False discovery rate control for trustworthy AI-based
+de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)** (Liang et al., bioRxiv, 2026). It implements
 the analysis in Fig. 3c: π-xNovo-DDA prediction, CCT at the PSM and peptide
 levels, protein inference and MS1 quantification. Feature definitions are in
 Supplementary Table 2 and Supplementary Note 2. See `CITATION.cff` for citation.

@@ -2,8 +2,8 @@
 
 This repository contains the **DDA** implementation of the π-xNovo de novo peptide sequencing model, together with a minimal training/evaluation script.
 
-This is the DDA sequencing component of **False discovery rate control enables
-trustworthy deep-learning-based de novo peptide sequencing** (Liang et al.;
+This is the DDA sequencing component of **[False discovery rate control for
+trustworthy AI-based de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)** (Liang et al., bioRxiv, 2026;
 Fig. 3a and Supplementary Fig. 2). It trains a sequencing model, not the CCT
 scoring models. To analyse spectra with an existing sequencing checkpoint,
 use the independent CCT notebook or NovoQC pipeline instead.
@@ -120,8 +120,9 @@ FDR adjustment factors, filter PSMs/peptides or perform quantification.
 
 ## Citation
 
-Please cite Liang et al., **False discovery rate control enables trustworthy
-deep-learning-based de novo peptide sequencing**. See `CITATION.cff`.
+Please cite Liang et al. (2026), **[False discovery rate control for trustworthy
+AI-based de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)**, bioRxiv.
+See `CITATION.cff` for the full citation.
 
 ## License
 
