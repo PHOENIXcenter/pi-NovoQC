@@ -230,6 +230,7 @@ def compute_aa_confidences(attention_matrix, theor_frags, pred_pep, mz, intens, 
     aa_confidences = [0.0] * L
     aa_details = []
     intens_rank = get_rank_percentile(intens)
+    top_k = min(top_k, attention_matrix.shape[1])
     for i in range(attention_matrix.shape[0]): 
         top_k_indices = np.argpartition(attention_matrix[i], -top_k)[-top_k:]
         aa_info = {

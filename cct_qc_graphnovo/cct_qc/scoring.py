@@ -85,6 +85,12 @@ def train_mlp(X, y,
     X_train, X_val, y_train, y_val = train_test_split(
         X, y, test_size=test_size, stratify=y, random_state=random_state
     )
+    if any(np.unique(labels).size != 2 for labels in (y_train, y_val)):
+        raise ValueError(
+            "QC training requires both label classes in the training and validation splits. "
+            "Use more reference-labeled PSMs; peptide-level training also requires "
+            "incorrect references after PSM filtering."
+        )
     scaler = StandardScaler().fit(X_train)
     X_train = scaler.transform(X_train)
     X_val   = scaler.transform(X_val)
