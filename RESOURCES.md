@@ -1,4 +1,4 @@
-# Data and pretrained models
+# Data and model resources
 
 ## First notebook run
 
@@ -6,20 +6,21 @@ The default notebook analyses the GraphNovo test species *Arabidopsis thaliana*,
 
 | Resource | Source | Local destination |
 | --- | --- | --- |
-| GraphNovo dataset | [Zenodo record 8000316](https://doi.org/10.5281/zenodo.8000316), as cited in the manuscript | Extract the test MGF files into the species directories below |
-| π-xNovo pretrained weights | [Author-provided Google Drive folder](https://drive.google.com/drive/folders/1pfrtLEEoWrGrIfriNGkIJqAIRgrH2tDW?usp=drive_link), linked in the existing project repository | Select an xNovo-DDA checkpoint compatible with the model configuration and set `checkpoint` in `config.yaml` |
+| GraphNovo test data and CCT resources | [src_data_and_weights_for_cct_qc_graphnovo.zip](https://drive.google.com/file/d/1zUlTf8gUY6ntlKspGJyfpySJ6n1DTJ-h/view) | Extract the test MGF files and the accompanying checkpoint, then set the paths in `config.yaml` |
+| DDA pretrained models | [pretrained_model_for_DDA.zip](https://drive.google.com/file/d/1YLYgdNoA5B12j7xW-HM-2oapZlQsHZ8L/view) | Extract the DDA checkpoint required by the training or inference entry point |
 
-The shared folder lists two archives:
+The complete shared folder is [here](https://drive.google.com/drive/folders/1pfrtLEEoWrGrIfriNGkIJqAIRgrH2tDW?usp=drive_link). It contains two named archives:
 
-- [src_data_and_weights_for_cct_qc_graphnovo.zip](https://drive.google.com/file/d/1zUlTf8gUY6ntlKspGJyfpySJ6n1DTJ-h/view): the existing GraphNovo example resource archive.
-- [pretrained_model_for_DDA.zip](https://drive.google.com/file/d/1YLYgdNoA5B12j7xW-HM-2oapZlQsHZ8L/view): the DDA pretrained-model archive.
+- [src_data_and_weights_for_cct_qc_graphnovo.zip](https://drive.google.com/file/d/1zUlTf8gUY6ntlKspGJyfpySJ6n1DTJ-h/view): the GraphNovo test data and CCT example resources used by the standalone notebook.
+- [pretrained_model_for_DDA.zip](https://drive.google.com/file/d/1YLYgdNoA5B12j7xW-HM-2oapZlQsHZ8L/view): pretrained DDA sequencing models used for DDA inference and training initialization.
 
-Download and extract resources into a separate directory, then point the current
-configuration at the required data and checkpoint. Keep the code and notebook
-from this repository; older code bundled with resource archives may use a
-different feature-construction procedure.
+Download and extract the archive required by the workflow you selected. Use the
+code and notebook from this repository, and set the corresponding data and
+checkpoint paths in the local configuration.
 
-The local checkpoint name below is an example, not the filename in the download folder. This source release does not include a verified file-to-experiment manifest for the weights. To reproduce a specific paper result, confirm the checkpoint's training dataset and model configuration; do not select a checkpoint solely because its extension is `.pth`. If a required checkpoint is not identifiable or accessible, contact the authors through the repository.
+Set `checkpoint` to the extracted DDA checkpoint that matches the model
+configuration. The checkpoint and its configuration must use the same acquisition
+type, architecture and modification vocabulary.
 
 ```text
 cct_qc_graphnovo/
@@ -47,11 +48,13 @@ Sequencing checkpoints and QC scoring models are different files. The notebook a
 
 ## Other datasets used in the manuscript
 
-These accessions identify the original data sources. The Methods and Supplementary Note 3 specify the subsets and preprocessing used for each analysis; downloading a full repository is not equivalent to preparing an experiment's inputs.
+These are the original data sources cited in the manuscript. The Methods and
+Supplementary Note 3 specify the subsets and preprocessing used for each analysis.
 
 | Dataset | Repository or accession |
 | --- | --- |
-| GraphNovo | [Zenodo 8000316](https://doi.org/10.5281/zenodo.8000316) |
+| GraphNovo full dataset | [Zenodo 8000316](https://doi.org/10.5281/zenodo.8000316) |
+| GraphNovo test data used by the notebook | [Google Drive archive](https://drive.google.com/file/d/1zUlTf8gUY6ntlKspGJyfpySJ6n1DTJ-h/view) |
 | MassIVE-KB | [MassIVE Knowledge Base spectral library v1](https://massive.ucsd.edu/ProteoSAFe/static/massive-kb-libraries.jsp), "All Candidate library spectra" |
 | Deep Human Proteome (DHP) | ProteomeXchange PXD024364 |
 | Astral DDA/DIA | ProteomeXchange PXD046453 |

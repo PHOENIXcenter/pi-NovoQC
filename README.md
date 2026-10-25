@@ -69,16 +69,16 @@ The notebook is a reusable analysis example. Reproducing a particular result in 
 
 ## Data, weights and citation
 
-See [RESOURCES.md](RESOURCES.md) for the data repositories, the existing author-provided weights link, expected checkpoint locations and input formats. Data and model weights are distributed separately from this source repository.
+See [RESOURCES.md](RESOURCES.md) for the data repositories, the Google Drive resources, expected checkpoint locations and input formats. The GraphNovo test data and the accompanying CCT resources are provided through the named Google Drive archive; the larger datasets used in the paper remain available from their original repositories.
 
 Please cite the accompanying manuscript when using this work:
 
 > Liang Z, Dai C, Ling T, Yang T, Yang Y, Leng Y, Xie L, He Y, He F, Wang Y, Chang C. **False discovery rate control enables trustworthy deep-learning-based de novo peptide sequencing.** Manuscript.
 
-Machine-readable citation information is provided in [CITATION.cff](CITATION.cff). No journal DOI is assigned in this source release.
+Machine-readable citation information is provided in [CITATION.cff](CITATION.cff).
 
 ## Help and licenses
 
-For input requirements, outputs and common setup errors, use the README in the directory you selected above. Report reproducible problems through [GitHub Issues](https://github.com/PHOENIXcenter/pi-NovoQC/issues), including the module, software version, command, error message and relevant configuration. Do not include private data or credentials.
+For input requirements, outputs and common setup errors, use the README in the directory you selected above. Report reproducible problems through [GitHub Issues](https://github.com/PHOENIXcenter/pi-NovoQC/issues), including the module, command, error message and relevant configuration. Do not include private data or credentials.
 
 See the root [LICENSE](LICENSE), the module licenses and their third-party notices. Vendored dependencies retain their original license files.

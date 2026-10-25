@@ -26,13 +26,15 @@ from this directory. Use a new output directory for each run.
 
 ## Inputs
 
-Download the GraphNovo test data from
-[Zenodo 8000316](https://doi.org/10.5281/zenodo.8000316). The existing author
-repository links [pretrained weights here](https://drive.google.com/drive/folders/1pfrtLEEoWrGrIfriNGkIJqAIRgrH2tDW?usp=drive_link).
-Select a DDA checkpoint matching `cct_qc/model_config.yaml`; the local filename
-below is configurable, not the name of a verified download. Both resources are
-external to this directory. Full-dataset inference benefits from a CUDA GPU;
-set `device: cuda:0` in `config.yaml` after installing a compatible PyTorch build.
+Download the GraphNovo test data and CCT resources from
+[`src_data_and_weights_for_cct_qc_graphnovo.zip`](https://drive.google.com/file/d/1zUlTf8gUY6ntlKspGJyfpySJ6n1DTJ-h/view).
+The DDA model archive is
+[`pretrained_model_for_DDA.zip`](https://drive.google.com/file/d/1YLYgdNoA5B12j7xW-HM-2oapZlQsHZ8L/view).
+Extract the checkpoint that matches `cct_qc/model_config.yaml`, then set its
+path in `config.yaml`. The full GraphNovo dataset is available from
+[Zenodo 8000316](https://doi.org/10.5281/zenodo.8000316). Full-dataset inference
+benefits from a CUDA GPU; set `device: cuda:0` after installing a compatible
+PyTorch build.
 
 The default configuration generates paired features from GraphNovo MGF spectra.
 Place each species' MGF files under `data/graphnovo_mgf/<species>/` and a trusted
