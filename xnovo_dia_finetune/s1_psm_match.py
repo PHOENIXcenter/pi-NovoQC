@@ -118,7 +118,7 @@ for filename in filenames:
                     ms2_list.append(spectra[spec_idx])
                 pbar.update(1)
         np.save(os.path.join(ms2_cache_dir, f'{filename}.npy'), np.array(ms2_list))            
-    # 提取MS2 rt, isolation window
+    # Extract MS2 retention times and isolation windows.
     ms2_rt_list = []
     with tqdm(total=len(ms2_list)) as pbar:
         for spec in ms2_list:
@@ -151,7 +151,7 @@ for filename in filenames:
     ms2_prec_lower = torch.from_numpy(np.array(ms2_prec_lower_window_list)).unsqueeze(dim=0).to(device).detach()
     ms2_prec_upper = torch.from_numpy(np.array(ms2_prec_upper_window_list)).unsqueeze(dim=0).to(device).detach()
     ms2_peaks_num = ms2_peaks_num > 10
-    # 查找PSM index   
+    # Find the matching PSM indices.
     pep_indices = []
     ms2_indices = []
     with tqdm(total=pep_end) as pbar:
@@ -182,17 +182,17 @@ for filename in filenames:
             prec_lower_bool = prec_lower_diff > 0
             prec_upper_bool = prec_upper_diff > 0
             
-            # 逐元素进行逻辑与运算
+            # Combine the conditions element by element.
             combined = rt_bool & prec_lower_bool & prec_upper_bool & ms2_peaks_num
 
-            # 找出所有同为True的元素的索引
+            # Find indices that satisfy every condition.
             indices = torch.nonzero(combined)
             indices[:,0] = indices[:,0] + i * pep_step
             pep_indices += indices[:,0].cpu().numpy().tolist()
             ms2_indices += indices[:,1].cpu().numpy().tolist()
             pbar.update(1)
 
-    # 按照MS2 index写入PSM
+    # Write PSMs in MS2-index order.
     sorted_sm2_idxs = np.argsort(np.array(ms2_indices))
     ms2_indices = np.array(ms2_indices)[sorted_sm2_idxs]
     pep_indices = np.array(pep_indices)[sorted_sm2_idxs]

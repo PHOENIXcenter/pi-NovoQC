@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pi-novoqc"
+version = "0.2.1"
+description = "CCT quality control and proteomics quantification"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+dependencies = [
+  "torch>=2.0,<2.9", "numpy>=1.24,<2", "pandas>=2,<3",
+  "scipy>=1.10,<1.17", "scikit-learn>=1.3,<1.8",
+  "pyteomics==4.7.2", "biopython>=1.81,<1.86", "PyYAML==6.0.1",
+  "einops>=0.6,<0.9", "spectrum_utils==0.4.2",
+  "pyproteininference==1.0.1", "pulp==2.9.0", "lxml>=4.9,<6", "tqdm>=4.64,<5",
+]
+
+[project.scripts]
+novoqc = "novoqc.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["novoqc*"]
+
+[tool.setuptools.package-data]
+novoqc = ["model_config.yaml"]
+"novoqc.depthcharge_new" = ["LICENSE", "LICENSE-depthcharge"]

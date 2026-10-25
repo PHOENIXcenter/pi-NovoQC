@@ -511,7 +511,7 @@ class ValidSpectrumDataset(Dataset):
         peptide = [peptide[idx] for idx in sample_idx_list]
         rt = [rt[idx] for idx in sample_idx_list]
     
-        # 根据电荷重排
+        # Reorder by precursor charge.
         sorted_charge_idxs = np.argsort(np.array(precursor_charge))
         precursor_charge = np.array(precursor_charge)[sorted_charge_idxs]  
         precursor_mz = np.array(precursor_mz)[sorted_charge_idxs]  

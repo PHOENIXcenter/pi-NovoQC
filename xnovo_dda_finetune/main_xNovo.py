@@ -9,9 +9,8 @@ The underlying training code lives in :mod:`xnovo_dda`.
 
 Notes
 -----
-* The original internal code supported distributed training via
-  ``torch.distributed.launch``. That launcher is deprecated; for multi-GPU runs
-  prefer ``torchrun`` (PyTorch >= 1.9).
+* Use the single-device launcher documented in README.md. Historical
+  distributed-training branches are retained but are not supported here.
 * This public version focuses on readability and reproducibility.
 """
 
@@ -87,9 +86,9 @@ def main(args):
     if args.pretrain_model == 'False':
         pass
     elif args.pretrain_model == 'TimsTOF_DDA':
-        config['modelname'] = '/code/xNovo_DIA_finetune/TimsTOF_DDA_pretrained.pth'
+        config['modelname'] = 'weights/TimsTOF_DDA_pretrained.pth'
     elif args.pretrain_model == 'MassIVE_KB':
-        config['modelname'] = '/code/xNovo_DDA_github/MassIVE_KB_trained_xNovo_DDA.pth'
+        config['modelname'] = 'weights/MassIVE_KB_trained_xNovo_DDA.pth'
         
     config['max_epochs'] = args.max_epoch
     config['title'] = config['title'] + f'_{args.max_epoch}epoch_{args.dropout}'

@@ -1,0 +1,23 @@
+# Paths are relative to this notebook directory.
+generate_features: true
+checkpoint: weights/pi_xnovo_dda.pth
+model_config: cct_qc/model_config.yaml
+feature_csv: data/paired_features.csv
+output: results/graphnovo_two_level_qc
+device: cpu
+batch_size: 32
+epochs: 50
+seed: 454
+psm_target_fdr: 0.05
+peptide_target_fdr: 0.05
+
+# SEQ supplies a reference only for this annotated benchmark.
+use_mgf_reference: true
+reference_csv: null
+samples:
+  - sample: A_Thaliana
+    mgf_dir: data/graphnovo_mgf/A_Thaliana
+  - sample: C_Elegans
+    mgf_dir: data/graphnovo_mgf/C_Elegans
+  - sample: E_Coli
+    mgf_dir: data/graphnovo_mgf/E_Coli

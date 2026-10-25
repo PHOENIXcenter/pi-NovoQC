@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript using the preferred citation below."
+type: software
+title: "pi-NovoQC"
+authors:
+  - name: "PHOENIXcenter"
+version: 0.2.1
+repository-code: "https://github.com/PHOENIXcenter/pi-NovoQC"
+url: "https://github.com/PHOENIXcenter/pi-NovoQC"
+preferred-citation:
+  type: generic
+  title: "False discovery rate control enables trustworthy deep-learning-based de novo peptide sequencing"
+  authors:
+    - family-names: "Liang"
+      given-names: "Zhendong"
+    - family-names: "Dai"
+      given-names: "Chengxin"
+    - family-names: "Ling"
+      given-names: "Tianze"
+    - family-names: "Yang"
+      given-names: "Tingpeng"
+    - family-names: "Yang"
+      given-names: "Yun"
+    - family-names: "Leng"
+      given-names: "Yeye"
+    - family-names: "Xie"
+      given-names: "Linhai"
+    - family-names: "He"
+      given-names: "Yonghong"
+    - family-names: "He"
+      given-names: "Fuchu"
+    - family-names: "Wang"
+      given-names: "Yu"
+    - family-names: "Chang"
+      given-names: "Cheng"
+  notes: "Accompanying manuscript. Publication details are not assigned in this source release."

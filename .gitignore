@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.ipynb_checkpoints/
+**/results/
+**/checkpoints/
+**/test_results/
+**/log/
+**/config_file/
+*.pth
+*.pt
+*.mzML
+*.mgf

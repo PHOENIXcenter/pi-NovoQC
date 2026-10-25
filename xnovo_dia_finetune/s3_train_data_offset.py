@@ -67,13 +67,13 @@ def read_txt(file_path):
                 spectra.append(spectrum)
                 spectrum = None
             else:
-                if line:  # 忽略空行
+                if line:  # Skip empty lines.
                     try:
                         mz, intensity = map(float, line.split())
                         spectrum['m/z array'].append(mz)
                         spectrum['intensity array'].append(intensity)
                     except ValueError:
-                        # 如果解析失败，打印错误信息或采取其他措施
+                        # Report a parsing failure.
                         print(f"Warning: Line could not be parsed: {line}")
     if spectrum:
         spectra.append(spectrum)
@@ -135,7 +135,7 @@ def read_spectrum_by_line_offset(file_path, line_offset):
             elif line.startswith("END IONS"):
                 break
             else:
-                if line:  # 忽略空行
+                if line:  # Skip empty lines.
                     try:
                         mz, intensity = map(float, line.split())
                         spectrum['m/z array'].append(mz)

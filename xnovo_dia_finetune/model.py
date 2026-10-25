@@ -119,7 +119,7 @@ class Spec2Pep(nn.Module):
         # predicted precursor information
         # Start with the first amino acid predictions.
         pred_prec_m, pred_prec_c, prec_attn_weights, _, _, _ = self.prec_dec.xeforward(None, None, None, windows, memories, mem_masks, is_inference=True)
-        # 提取子谱图
+        # Extract subspectra.
         sub_spectra, sub_windows, _ = extract_sub_spectra(spectra, prec_attn_weights, pred_prec_c, windows, topk=self.sub_peaks, stop_class=self.max_c)
         new_memories, new_mem_masks = self.spec_enc.inference(normalize_intensities(sub_spectra))
 

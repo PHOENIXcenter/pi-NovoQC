@@ -1,13 +1,13 @@
 """Main entry point for π-xNovo-DIA fine-tuning.
 
-This script reads a YAML config (see `config_xNovo.yaml`) and fine-tunes the model on
+This script reads a YAML config and fine-tunes the model on
 spectrum–peptide pairs prepared from DIA data.
 
 Typical usage:
-    python main_xNovo.py --config config_xNovo.yaml
+    torchrun --standalone --nproc_per_node=1 main_xNovo.py --multiprocessing True --n_gpus 1 --config configs/xnovo_dia_finetune.yaml
 
-For multi-GPU runs, prefer `torchrun`:
-    torchrun --nproc_per_node 2 main_xNovo.py --multiprocessing True --n_gpus 2 --config config_xNovo.yaml
+The preserved DIA training loop requires CUDA and a distributed model wrapper,
+including when using one worker. Multi-GPU training has not been revalidated.
 
 Outputs (checkpoints and logs) are written to:
     - checkpoints/

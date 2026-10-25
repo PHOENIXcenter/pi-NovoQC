@@ -1,23 +1,13 @@
-# Core numerical + ML
-numpy
-pandas
-scipy
-scikit-learn
-xgboost
-
-# Deep learning
-torch
-
-# MS / proteomics utilities
-pyteomics
-spectrum_utils
-
-# General utilities
-pyyaml
-tqdm
-biopython
-
-# Plotting + notebooks
-matplotlib
-jupyter
-ipykernel
+torch>=2.0,<2.9
+numpy>=1.24,<2
+pandas>=2,<3
+scipy>=1.10,<1.17
+scikit-learn>=1.3,<1.8
+pyteomics==4.7.2
+PyYAML==6.0.1
+einops>=0.6,<0.9
+spectrum_utils==0.4.2
+lxml>=4.9,<6
+tqdm>=4.64,<5
+jupyterlab>=4,<5
+ipykernel>=6,<7
