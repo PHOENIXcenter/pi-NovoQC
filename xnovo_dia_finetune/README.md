@@ -112,8 +112,8 @@ current loader before the DIA state is restored.
 The preserved DIA training loop uses a distributed sampler and a wrapped model,
 including when training on one GPU. The command above starts one CUDA worker
 and supplies that environment explicitly. A plain `python main_xNovo.py` command
-does not supply the required distributed environment. Multi-GPU scaling has not
-been revalidated in this packaging revision.
+does not supply the required distributed environment. Use the one-GPU command
+above for this workflow.
 
 This directory contains its own model, training code and vendored dependencies.
 It does not import either NovoQC or the notebook example, and does not perform

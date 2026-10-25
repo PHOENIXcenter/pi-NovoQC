@@ -46,10 +46,10 @@ the mzML must retain MS1 scans for quantification; the reference PSMs and databa
 peptide intensities come from your completed database-search workflow. Use a
 target-only FASTA containing the protein IDs in the quantitative table.
 
-The existing author repository provides a
-[sequencing-weights folder](https://drive.google.com/drive/folders/1pfrtLEEoWrGrIfriNGkIJqAIRgrH2tDW?usp=drive_link).
-Select an xNovo-DDA checkpoint matching the supplied model configuration. The
-example name `pi_xnovo_dda.pth` is a local path, not a verified download filename.
+Download the DDA pretrained models from
+[`pretrained_model_for_DDA.zip`](https://drive.google.com/file/d/1YLYgdNoA5B12j7xW-HM-2oapZlQsHZ8L/view).
+Set `--checkpoint` to the extracted xNovo-DDA checkpoint and use its matching
+model configuration. Replace `pi_xnovo_dda.pth` in the example with that path.
 
 ```bash
 novoqc run \

@@ -89,8 +89,7 @@ python main_xNovo.py \
   --dropout 0.1
 ```
 
-The example explicitly sets training dropout and the epoch count; these are
-usage examples, not a claim to reproduce every paper experiment. CLI options
+Set training dropout and the epoch count for your experiment. CLI options
 `--max_epoch`, `--dropout` and `--train_mask_ratio` override the corresponding
 YAML values even when the CLI defaults are used. Set them explicitly for your
 experiment. `valid_species` is read from the YAML.
@@ -104,8 +103,7 @@ Outputs:
 ## Training scope
 
 The documented entry point trains on one device. Set `--device cuda:0` for a
-single CUDA GPU. The historical distributed branches are retained as source;
-they are not the supported launcher for this package. Checkpoints selected by
+single CUDA GPU. Use the single-device command above. Checkpoints selected by
 `--pretrain_model` are read from `weights/`, with no author-specific paths.
 
 `--pretrain_model MassIVE_KB` loads
