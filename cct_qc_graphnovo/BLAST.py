@@ -214,4 +214,4 @@ def process_db_results(file_path, final_results_path):
             for k in range(len(all_alignments)):
                 head = all_alignments[k].values()
                 writer.writerow(head) 
-                pbar.update(1)     
+                pbar.update(1)
