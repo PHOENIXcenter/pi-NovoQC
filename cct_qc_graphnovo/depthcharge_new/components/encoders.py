@@ -97,13 +97,13 @@ class MZ_Encoder(nn.Module):
             The encoded features for the mass spectra.c
      
         """
-        # 输入为浮点数，但是nn.embedding检索需要整数
+        # Convert floating-point m/z values to integer embedding indices.
         mz_tensors = X  * 10  # precision = 0.1 Da
         mz_tensors = mz_tensors.long()
         return self.mz_encoder(mz_tensors)
 
     def get_mz_embedding(self, X):
-        # 输入为浮点数，但是nn.embedding检索需要整数
+        # Convert floating-point m/z values to integer embedding indices.
         mz_tensors = X  * 10  # precision = 0.1 Da
         mz_tensors = mz_tensors.long()
         return self.mz_encoder(mz_tensors)

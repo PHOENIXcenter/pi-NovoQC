@@ -45,8 +45,8 @@ def peptides_to_fasta(seqs, spec_id, output_file):
 
 def blast_peptides(query_name, db_name, output_name, evalue=10, conda_env="blast"):
     """
-    使用 conda 环境中安装的 blastp 工具将肽段比对到目标数据库。
-    推荐使用 conda run 调用指定虚拟环境中的 blastp。
+    Align peptides to the target database using blastp.
+    Run blastp in the specified conda environment via conda run.
     """
     cmd = [
         "conda", "run", "-n", conda_env,
@@ -67,7 +67,7 @@ def blast_peptides(query_name, db_name, output_name, evalue=10, conda_env="blast
 def parse_and_combine_sequences(blast_output):
     lines = blast_output.strip().split("\n")
     
-    # 初始化存储结构
+    # Accumulate sequences and alignment coordinates across blocks.
     query_sequence = ""
     align_sequence = ""
     subject_sequence = ""
@@ -83,7 +83,7 @@ def parse_and_combine_sequences(blast_output):
                 query_start = int(parts[1])
             query_end = int(parts[3])
             query_sequence += parts[2]
-            align_sequence += ' ' * (len(parts[1]) + len(parts[3]) + 4)  # 为了对齐添加空格
+            align_sequence += ' ' * (len(parts[1]) + len(parts[3]) + 4)  # Pad the alignment line.
         elif line.startswith("Sbjct"):
             parts = line.split()
             if not subject_start:
@@ -91,13 +91,13 @@ def parse_and_combine_sequences(blast_output):
             subject_end = int(parts[3])
             subject_sequence += parts[2]
         else:
-            # 对齐的中间序列
+            # Collect the alignment match line.
             align_sequence += line.strip()
 
-    # 移除对齐序列中的额外空格
+    # Remove spaces from the alignment match string.
     align_sequence = align_sequence.replace(" ", "")
 
-    # 拼接完整序列
+    # Assemble the full alignment sequences.
     full_query_sequence = f"{query_sequence}"
     full_subject_sequence = f"{subject_sequence}"
     full_align_sequence = align_sequence
@@ -111,13 +111,13 @@ def parse_and_combine_sequences(blast_output):
     }
 
 def parse_blast_output_to_dict(blast_text):
-    # 初始化结果字典
+    # Parse query metadata and collect its alignments.
     lines = blast_text.split("\n\n\n")
     query_info, query_length = lines[0].split('\n')[0][7:], int(lines[0].split('\n')[2].split('=')[-1])
     alignments = []
     for i in range(len(lines)):
         if i != (len(lines) - 1) and i != 0:
-            if 'Lambda' in lines[i]:  # 统计信息 后面的都可以忽略
+            if 'Lambda' in lines[i]:  # Stop at the trailing BLAST statistics.
                 break
             subject_info, align_info, align_results = lines[i].split('\n\n')[0], lines[i].split('\n\n')[1], '\n\n'.join(lines[i].split('\n\n')[2:])
             if 'Score' in subject_info: # wrong match, without protein accession id
@@ -178,13 +178,13 @@ def process_db_results(file_path, final_results_path):
     with open(file_path, 'r') as file:
         content = file.read()
     
-    # 使用‘Query= contig’作为分隔符分割内容
+    # Split the output into peptide query blocks.
     separator = 'Query= peptide'
     contigs = content.split(separator)
 
-    # 处理分割后的块，确保每个块前面都添加上分隔符（除了第一块，如果它不以分隔符开始的话）
+    # Restore each query header and skip the text before the first query.
     processed_contigs = [separator + contig for contig in contigs[1:]]
-    # 例如，打印块的数量
+    # Report the number of peptide queries.
     print(len(processed_contigs))
     
     all_alignments = []

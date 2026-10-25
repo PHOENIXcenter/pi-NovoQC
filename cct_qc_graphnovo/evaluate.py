@@ -59,7 +59,7 @@ def aa_match_prefix(
             i1, cum_mass1 = i1 + 1, cum_mass1 + aa_mass1
         else:
             i2, cum_mass2 = i2 + 1, cum_mass2 + aa_mass2
-    return aa_matches, aa_matches.all()  # 有剩余说明不是完全匹配
+    return aa_matches, aa_matches.all()  # Unmatched residues prevent a full peptide match.
 
 
 def aa_match_prefix_suffix(
