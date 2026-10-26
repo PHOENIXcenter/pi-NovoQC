@@ -9,7 +9,7 @@ repository-code: "https://github.com/PHOENIXcenter/pi-NovoQC"
 url: "https://github.com/PHOENIXcenter/pi-NovoQC"
 preferred-citation:
   type: article
-  title: "False discovery rate control for trustworthy AI-based de novo peptide sequencing"
+  title: "False discovery rate control enables trustworthy deep-learning-based de novo peptide sequencing"
   journal: "bioRxiv"
   year: 2026
   month: 6

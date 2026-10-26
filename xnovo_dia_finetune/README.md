@@ -1,7 +1,7 @@
 # π-xNovo (DIA) fine-tuning code
 
-This is the DIA sequencing component of **[False discovery rate control for
-trustworthy AI-based de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)** (Liang et al., bioRxiv, 2026;
+This is the DIA sequencing component of **[False discovery rate control enables
+trustworthy deep-learning-based de novo peptide sequencing](https://doi.org/10.64898/2026.06.29.735174)** (Liang et al., bioRxiv, 2026;
 Fig. 3a and Supplementary Fig. 3). It fine-tunes the sequencing model; it does
 not run the DDA notebook or the raw-DDA NovoQC analysis workflow.
 
